@@ -1,0 +1,11 @@
+{
+  "name": "starter-code",
+  "version": "1.0.0",
+  "description": "starter code for a terrarium",
+  "main": "script.js",
+  "scripts": {
+    "test": "http-server"
+  },
+  "author": "",
+  "license": "MIT"
+}
