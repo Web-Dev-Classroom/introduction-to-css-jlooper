@@ -10,6 +10,6 @@
     "http-server": "*"
   },
   "scripts": {
-    "test": "http-server"
+    "test": "jest"
   }
 }
