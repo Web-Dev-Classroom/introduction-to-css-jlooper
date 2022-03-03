@@ -1,6 +1,6 @@
 /*The solution to draggable elements was inspired by w3schools solution on creating a [Draggable HTML Element](https://www.w3schools.com/howto/howto_js_draggable.asp).*/
 
-dragElement(document.getElementById('plant1'));
+// dragElement(document.getElementById('plant1'));
 dragElement(document.getElementById('plant2'));
 dragElement(document.getElementById('plant3'));
 dragElement(document.getElementById('plant4'));

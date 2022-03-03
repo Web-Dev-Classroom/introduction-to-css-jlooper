@@ -6,34 +6,19 @@
 
 let fs = require('fs');
 
-test('All the terrarium plants elements are not null and draggable', () => {
+// Set up document body by loading index.html file
+var markup = fs.readFileSync('./index.html')
+document.body.innerHTML = markup
+require('./script');
 
-    // Set up document body by loading index.html file
-    var htmlData = new Promise((resolve, reject) => {
-        fs.readFile('./index.html', (err, data) => {
-            resolve(data)
-        });
 
-    });
+test('The terrarium plant with id of "plant1" exists', () => {
+    //If no problems with script.js, this test will always run
+    expect(document.getElementById('plant1')).not.toBeNull()
+});
 
-    var markup = () => {
-        htmlData.then(d => {
-            return d.toString();
-        });
-    }
-
-    //set markup to the body
-    document.body.innerHTML = markup()
-
-        // document.body.innerHTML = htmlData.then();
-
-        //   '<div>' +
-        //   '<div class="plant-holder">' +
-        //   '<img class="plant" alt="plant" id="plant1" src="./images/plant1.png" />' +
-        //   '</div>';
-
-        require('./script');
-
-        //If no problems with script.js, this test will run
-        expect(document.getElementById('plant1')).not.toBeNull()
-    });
+//
+test('The terrarium plant with id of "plant1" is draggable', () => {      
+    //If no problems with script.js, this test will pass if line 3 is uncommented
+    expect(document.getElementById('plant1').onpointerdown).not.toBeUndefined()
+});
